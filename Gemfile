@@ -40,6 +40,10 @@ group :development do
   gem "onkcop", require: false
 end
 
+group :test do
+  gem "database_rewinder"
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "dotenv-rails"
 gem "seed-fu"
