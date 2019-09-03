@@ -3,7 +3,7 @@ class Api::V1::BooksController < Api::V1::BaseController
 
   # GET /books
   def index
-    render json: Books.order(created_at: :desc)
+    render json: Book.order(created_at: :desc)
   end
 
   # GET /books/1
@@ -16,7 +16,7 @@ class Api::V1::BooksController < Api::V1::BaseController
     @book = Book.new(book_params)
 
     if @book.save
-      render json: @book, status: :created, location: @book
+      render json: @book, status: :created, location: api_v1_book_url(@book)
     else
       render json: @book.errors, status: :unprocessable_entity
     end
