@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -11,7 +11,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should create book" do
-    assert_difference('Book.count') do
+    assert_difference("Book.count") do
       post books_url, params: { book: { author: @book.author, isbn: @book.isbn, title: @book.title } }, as: :json
     end
 
@@ -29,7 +29,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy book" do
-    assert_difference('Book.count', -1) do
+    assert_difference("Book.count", -1) do
       delete book_url(@book), as: :json
     end
 

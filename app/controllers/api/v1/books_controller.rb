@@ -1,11 +1,9 @@
-class BooksController < ApplicationController
+class Api::V1::BooksController < Api::V1::BaseController
   before_action :set_book, only: [:show, :update, :destroy]
 
   # GET /books
   def index
-    @books = Book.all
-
-    render json: @books
+    render json: Books.order(created_at: :desc)
   end
 
   # GET /books/1
@@ -39,6 +37,7 @@ class BooksController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])
