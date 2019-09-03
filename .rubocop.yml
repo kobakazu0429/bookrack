@@ -9,7 +9,7 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 2.4
   # uncomment if use rails cops
-  TargetRailsVersion: 5.1
+  TargetRailsVersion: 5.2
   Exclude:
     - "frontend/node_modules/**/*"
     - "node_modules/**/*"
